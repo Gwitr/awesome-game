@@ -1,10 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceo7t0ool8qta"]
+[gd_scene load_steps=3 format=3 uid="uid://ceo7t0ool8qta"]
+
+[ext_resource type="PackedScene" uid="uid://b86qr45q30vgt" path="res://Textbox.tscn" id="1_0ksvu"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_1sus6"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_1sus6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="Camera2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 575.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Textbox" parent="Camera2D/CenterContainer" instance=ExtResource("1_0ksvu")]
+layout_mode = 2
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
